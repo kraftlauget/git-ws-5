@@ -1,7 +1,7 @@
 const movementSpeed = 10;
 const distanceFromPointerToStop = 110;
 const defaultSize = 40;
-const maxSize = 100;
+const maxSize = 200;
 const intervalTimeout = 10;
 
 let pointerX = 0;
@@ -16,6 +16,7 @@ const rickRoll = () => {
   const image = document.createElement("img");
   image.src = "./rick.jpg";
   image.className = "rick";
+  console.log(image);
   document.body.appendChild(image);
 };
 
@@ -65,7 +66,7 @@ const isRickAtPointer = (i) => {
 const growRick = (i, image) => {
   const { increasedSize } = getRickInfo(i);
   let newSize = increasedSize + defaultSize;
-  newSize = newSize > 100 ? maxSize : newSize;
+  newSize = newSize > maxSize ? maxSize : newSize;
 
   increasedSizes[i] = increasedSize + 1;
 
